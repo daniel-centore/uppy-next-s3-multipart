@@ -1,18 +1,24 @@
 {
   "compilerOptions": {
     "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "esnext",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "module": "commonjs",
     "declaration": true,
     "outDir": "./build",
     "strict": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "esModuleInterop": true
   },
   "include": [
     "**/*.ts"
   ],
   "exclude": [
     "node_modules",
+    "build",
     "**/__tests__/*"
   ]
 }

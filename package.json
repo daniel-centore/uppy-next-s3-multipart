@@ -6,10 +6,16 @@
     "@uppy/aws-s3-multipart": "^2.2.2",
     "@uppy/core": "^2.1.10",
     "aws-sdk": "^2.1127.0",
-    "next": "^12.1.6"
+    "next": "^12.1.6",
+    "react": "^18.1.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.31",
+    "@types/react": "^18.0.8",
+    "@types/react-dom": "^18.0.3",
     "typescript": "^4.6.4"
+  },
+  "scripts": {
+    "build": "tsc"
   }
 }
