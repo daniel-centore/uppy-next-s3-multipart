@@ -6,7 +6,7 @@ Normally Uppy wants you to include their [Companion](https://uppy.io/docs/compan
 ## Setup
 First install this library with `yarn add uppy-next-s3-multipart` or `npm install uppy-next-s3-multipart`
 
-Then, create a new API endpoint at the location of your choosing. In this example, I'm creating it at `pages/api/uppy-aws/[endpoint].ts`. Create a new `UppyNextS3MultipartEndpoint` with the appropriate parameters set, and then redirect all the API calls to `endpointHandler.handle(req, res)`.
+Then, create a new API endpoint at the location of your choosing. This endpoint should redirect all of its calls to `new UppyNextS3MultipartEndpoint(...).handle(req, res)`. In this example, I'm creating it at `pages/api/uppy-aws/[endpoint].ts`.
 
 ```
 import { UppyFile } from '@uppy/core';
