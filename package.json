@@ -1,5 +1,8 @@
 {
   "name": "uppy-next-s3-multipart",
+  "description": "This is a library designed to make it simple to integrate the Uppy uploader library with AWS S3 Multipart Uploads while using a NextJS server.",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "version": "1.0.0",
   "license": "GPL-3.0",
   "dependencies": {
@@ -16,6 +19,14 @@
     "typescript": "^4.6.4"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "files": [
+    "build/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniel-centore/uppy-next-s3-multipart.git"
   }
 }

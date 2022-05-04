@@ -49,7 +49,7 @@ export const getUppyNextS3MultipartOptions = <T>(endpoint: string, filenameParam
       return json;
     },
     prepareUploadParts: async (file: UppyFile, partData: { uploadId: string; key: string; partNumbers: Array<number>; chunks: { [k: number]: Blob } }) => {
-      const res = await fetch(`${endpoint}prepareUploadParts`, {
+      const res = await fetch(`${endpoint}/prepareUploadParts`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ file, partData })
@@ -62,7 +62,7 @@ export const getUppyNextS3MultipartOptions = <T>(endpoint: string, filenameParam
       return json;
     },
     abortMultipartUpload: async (file: UppyFile, { uploadId, key }: {uploadId: string, key: string}) => {
-      const res = await fetch(`${endpoint}abortMultipartUpload`, {
+      const res = await fetch(`${endpoint}/abortMultipartUpload`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ file, uploadId, key })
