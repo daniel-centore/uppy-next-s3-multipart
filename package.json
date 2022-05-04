@@ -3,7 +3,7 @@
   "description": "This is a library designed to make it simple to integrate the Uppy uploader library with AWS S3 Multipart Uploads while using a NextJS server.",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "GPL-3.0",
   "dependencies": {
     "@uppy/aws-s3-multipart": "^2.2.2",

@@ -4,14 +4,16 @@ This is a library designed to make it simple to integrate the [Uppy](https://upp
 Normally Uppy wants you to include their [Companion](https://uppy.io/docs/companion/) server for doing this, but it's a little bit overkill for this simple use case, and it means you'd have to switch to using [Express](https://expressjs.com/), which causes you to lose many of the benefits of the NextJS server.
 
 ## Setup
-First, create a new API endpoint at the location of your choosing. In this example, I'm creating it at `pages/api/uppy-aws/[endpoint].ts`. Create a new `UppyNextS3MultipartEndpoint` with the appropriate parameters set, and then redirect all the API calls to `endpointHandler.handle(req, res)`.
+First install this library with `yarn add uppy-next-s3-multipart` or `npm install uppy-next-s3-multipart`
+
+Then, create a new API endpoint at the location of your choosing. In this example, I'm creating it at `pages/api/uppy-aws/[endpoint].ts`. Create a new `UppyNextS3MultipartEndpoint` with the appropriate parameters set, and then redirect all the API calls to `endpointHandler.handle(req, res)`.
 
 ```
 import { UppyFile } from '@uppy/core';
 import { S3 } from 'aws-sdk';
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { v4 as uuid } from 'uuid';
-import { UppyNextS3MultipartEndpoint } from '../../../libs/UppyNextS3Multipart/UppyNextS3MultipartEndpoint';
+import { UppyNextS3MultipartEndpoint } from uppy-next-s3-multipart';
 
 const S3_ACCESS_KEY_ID = process.env.S3_ACCESS_KEY_ID;
 const S3_SECRET_ACCESS_KEY = process.env.S3_SECRET_ACCESS_KEY;
@@ -53,7 +55,7 @@ export default async function handler(
 }
 ```
 
-On the client side, create your Uppy instance as you normally would, but pass in the options from `getUppyNextS3MultipartOptions(endpoint)`. For example:
+Finally, on the client side, create your Uppy instance as you normally would, but pass in the options from `getUppyNextS3MultipartOptions(endpoint)`. For example:
 
 ```
 import '@uppy/core/dist/style.css'
@@ -62,7 +64,7 @@ import '@uppy/dashboard/dist/style.css'
 import Uppy from '@uppy/core'
 import { Dashboard } from '@uppy/react'
 import { AwsS3Multipart } from 'uppy'
-import { getUppyNextS3MultipartOptions } from '../libs/UppyNextS3Multipart/UppyNextS3MultipartOptions'
+import { getUppyNextS3MultipartOptions } from 'uppy-next-s3-multipart'
 import { FilenameGenParams } from '../pages/api/uppy-aws/[endpoint]'
 
 const uppy = new Uppy();
