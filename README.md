@@ -1,4 +1,7 @@
 # UppyNextS3Multipart
+
+NOTE: THIS LIBRARY DOES NOT YET WORK WITH UPPY V3! I do not know when I'll get around to fixing it. Please either use Uppy v2 or update this library yourself and put up a PR.
+
 This is a library designed to make it simple to integrate the [Uppy](https://uppy.io/) uploader library with [AWS S3 Multipart Uploads](https://uppy.io/docs/aws-s3-multipart/) while using a [NextJS](https://nextjs.org/) server.
 
 Normally Uppy wants you to include their [Companion](https://uppy.io/docs/companion/) server for doing this, but it's a little bit overkill for this simple use case, and it means you'd have to switch to using [Express](https://expressjs.com/), which causes you to lose many of the benefits of the NextJS server.
